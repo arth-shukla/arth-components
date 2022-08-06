@@ -23,4 +23,4 @@ interface DarkModeSwitchProps {
 }
 declare function DarkModeSwitch({ darkMode, onClick, size, className, style, animDuration, lightModeColor, darkModeColor, ...rest }: DarkModeSwitchProps): JSX.Element;
 
-export { ColorSwitch, DarkModeSwitch as DarkModeSwtich };
+export { ColorSwitch, DarkModeSwitch };
