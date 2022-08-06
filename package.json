@@ -16,7 +16,8 @@
 		"rollup-watch": "rollup -c -w",
 		"build": "npm run prebuild && rollup -c",
 		"full-build": "npm run prettier && npm run build && git add -A && git commit -m \"full-build\"",
-		"prettier": "prettier src --write"
+		"prettier": "prettier src --write",
+		"full-publish": "npm run full-build && npm publish"
 	},
 	"author": "Arth Shukla",
 	"license": "MIT",
