@@ -24,26 +24,26 @@ function DarkModeSwitch({
 	darkModeColor = 'rgba(255, 255, 255, .87)',
 	...rest
 }: DarkModeSwitchProps) {
-	const [childDarkMode, setChildDarkMode] = useState<boolean>(darkMode || false)
-	const isMoon: boolean = darkMode || childDarkMode
+	const [_darkMode, set_darkMode] = useState<boolean>(darkMode || false)
+	const isMoon: boolean = darkMode === undefined ? _darkMode : darkMode
 	const svgColor: string = isMoon ? darkModeColor : lightModeColor
 
-	const childOnClick: () => void = () => {
+	const _onClick: () => void = () => {
 		onClick()
-		setChildDarkMode(!childDarkMode)
+		set_darkMode(!_darkMode)
 	}
 
 	return (
 		<button
 			className={'ai-dark-mode-switch' + (isMoon ? ' ai-dark-mode-switch-moon ' : ' ai-dark-mode-switch-sun ') + className}
-			onClick={childOnClick}
+			onClick={_onClick}
 			style={
 				{
 					'--theme-anim': svgColor,
 					'--tr-sec': animDuration,
 					width: size,
 					height: size,
-					...style
+					...style,
 				} as React.CSSProperties
 			}
 			{...rest}
