@@ -1,6 +1,6 @@
 {
 	"name": "@arth-shukla/my-icons",
-	"version": "0.0.3",
+	"version": "1.0.0",
 	"description": "A component library for my simple icon animations.",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -14,7 +14,9 @@
 	"scripts": {
 		"prebuild": "rm -rf dist",
 		"rollup-watch": "rollup -c -w",
-		"build": "npm run prebuild && rollup -c"
+		"build": "npm run prebuild && rollup -c",
+		"full-build": "npm run prettier && npm run build && git add -A && git commit -m \"full-build\"",
+		"prettier": "prettier src --write"
 	},
 	"author": "Arth Shukla",
 	"license": "MIT",
