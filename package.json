@@ -41,6 +41,6 @@
 		"react-dom": "^18.2.0"
 	},
 	"publishConfig": {
-		"@arth-shukla:registry": "https://npm.pkg.github.com"
+		"registry": "https://npm.pkg.github.com/@arth-shukla"
 	}
 }
