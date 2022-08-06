@@ -34,12 +34,15 @@ function ColorSwitch({ currentColorIndex, colors, onClick = () => {}, size = 40,
 					'--ai-color-switch-color': colors[_colorIndex],
 					'--ai-color-switch-tr-sec': animDuration,
 					'--ai-color-switch-size': `${size * 0.558}px`,
-					...style
+					...style,
 				} as React.CSSProperties
 			}
 			{...rest}
 		>
-			<div aria-hidden={true} className={`ai-color-targ ai-color-targ-${_selectNum}`}></div>
+			<div
+				aria-hidden={true}
+				className={`ai-color-targ ai-color-targ-${_selectNum}`}
+			></div>
 		</button>
 	)
 }
