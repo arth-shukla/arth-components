@@ -1,0 +1,29 @@
+{
+	"name": "my-icons",
+	"version": "1.0.0",
+	"description": "A component library for my simple icon animations.",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+	},
+	"author": "Arth Shukla",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^18.6.4",
+		"@types/react": "^18.0.15",
+		"@types/react-dom": "^18.0.6",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"typescript": "^4.7.4"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
+}
