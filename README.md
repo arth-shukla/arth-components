@@ -1,7 +1,8 @@
 # Description
 
-This is a component library for my simple icon animations. Since I will likely use these components across multiple projects, I made a library so I don't have to port the same components to each new
-project.
+This is a component library for my simple icon animations. It is published through GitHub Packages https://github.com/arth-shukla/my-icons/packages/1583093.
+
+Since I will likely use these components across multiple projects, I made a library so I don't have to port the same components to each new project.
 
 # Features
 
