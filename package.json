@@ -17,7 +17,6 @@
 		"build": "npm run prebuild && rollup -c",
 		"full-build": "npm run prettier && npm run build && git add -A && git commit -m \"full-build\"",
 		"prettier": "prettier src --write",
-		"publish": "npm publish",
 		"full-publish": "npm run full-build && npm run publish"
 	},
 	"author": "Arth Shukla",
