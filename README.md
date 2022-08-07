@@ -7,10 +7,13 @@ Since I will likely use these components across multiple projects, I made a libr
 # Features
 
 1. Supports computer, mobile, and tablet web interfaces through webkit
-2. Accessible
+2. Written in Typescript
+    - Prop typing allows for easier debugging in projects
+    - Components usable in both Typescript and standard React projects
+3. Accessible
     - The components themselves support keyboard control and aria tags are added where appropriate.
     - Additional acessibility options (e.g. `aria-label`s) must be passed as props.
-3. Customizable
+4. Customizable
     - Additional props (ids, classNames, etc) can be passed into the component to override default styling.
 
 # Related Projects
