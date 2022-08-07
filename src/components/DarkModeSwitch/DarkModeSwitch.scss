@@ -33,11 +33,11 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 	svg {
 		transition: all var(--tr-sec) ease-in-out;
 		-webkit-transition: none;
-		#moon {
+		#ai-dark-mode-switch-icon-moon {
 			fill: var(--theme-anim);
 			@include std-webkit-transition(calc(var(--tr-sec) / 3));
 		}
-		#moon-mask {
+		#ai-dark-mode-switch-icon-moon-mask {
 			> circle {
 				fill: #000;
 				@include std-webkit-transition(calc(var(--tr-sec) / 3));
@@ -50,7 +50,7 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 		g > circle {
 			fill: var(--theme-anim);
 		}
-		#dots-mask {
+		#ai-dark-mode-switch-icon-dots-mask {
 			> circle {
 				fill: #000;
 				@include std-webkit-transition(calc(var(--tr-sec) / 3));
@@ -64,7 +64,7 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 .ai-dark-mode-switch-sun {
 	svg {
 		@for $i from 1 through 6 {
-			#spot-#{$i} {
+			#ai-dark-mode-switch-icon-spot-#{$i} {
 				transform: translate(0, 0);
 				-webkit-transform: translate(0, 0);
 				@include animate(spot-#{$i}-reveal, var(--ai-dark-mode-anim-len), ease-in-out) {
@@ -97,7 +97,7 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 				transform: rotate(210deg);
 			}
 		}
-		#moon-mask > circle {
+		#ai-dark-mode-switch-icon-moon-mask > circle {
 			transform: translateX(15px);
 			-webkit-transform: translateX(15px);
 		}
@@ -128,13 +128,13 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 				-webkit-transform: rotate(0deg);
 			}
 		}
-		#moon-mask > circle {
+		#ai-dark-mode-switch-icon-moon-mask > circle {
 			transform: translateX(0);
 			-webkit-transform: translateX(0);
 		}
 		> g {
 			@for $i from 1 through 6 {
-				#spot-#{$i} {
+				#ai-dark-mode-switch-icon-spot-#{$i} {
 					transform: translate(#{list.nth($locs, $i)});
 					-webkit-transform: translate(#{list.nth($locs, $i)});
 				}
@@ -143,7 +143,7 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 	}
 }
 .ai-dark-mode-switch-sun:hover {
-	#moon {
+	#ai-dark-mode-switch-icon-moon {
 		fill: #000 !important;
 	}
 	g > circle {
@@ -151,7 +151,7 @@ $tr-pcts: (42%, 67%), (28%, 53%), (14%, 34%), (0%, 20%), (70%, 100%), (56%, 86%)
 	}
 }
 .ai-dark-mode-switch-moon:hover {
-	#moon {
+	#ai-dark-mode-switch-icon-moon {
 		fill: #fff !important;
 	}
 	g > circle {
