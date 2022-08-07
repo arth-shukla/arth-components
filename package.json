@@ -1,6 +1,6 @@
 {
 	"name": "@arth-shukla/my-icons",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "A component library for my simple icon animations.",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
