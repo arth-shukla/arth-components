@@ -1,4 +1,4 @@
-# Description
+# Description and Motivation
 
 This is a component library for my simple icon animations. It is published through GitHub Packages https://github.com/arth-shukla/my-icons/packages/1583093.
 
@@ -21,3 +21,7 @@ Since I will likely use these components across multiple projects, I made a libr
 Demos and documentation for the above library are available here: https://arth-shukla.github.io/my-icons-documentation/.
 
 A real project where I've used these components is this DnD Dice Roller: https://arth-shukla.github.io/dice-roller/.
+
+# About Me
+
+Arth Shukla [GitHub](https://github.com/arth-shukla) | [LinkedIn](https://www.linkedin.com/in/arth-shukla/)
