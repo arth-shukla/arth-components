@@ -1,3 +1,11 @@
+# Technologies Used
+
+Web Development: React, TypeScript, Storybook, SCSS
+
+DevOps: Git, GitHub Packages
+
+Development Standards: Web Content Accessibility Guidelines (WCAG) 2.1, Aria Authoring Practices Guide (APG)
+
 # Description and Motivation
 
 This is a component library for my simple icon animations. It is published through GitHub Packages https://github.com/arth-shukla/my-icons/packages/1583093.
