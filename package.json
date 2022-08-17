@@ -61,6 +61,8 @@
 	"dependencies": {
 		"@storybook/preset-scss": "^1.0.3",
 		"css-loader": "^5.2.6",
+		"postcss": "^8.4.16",
+		"postcss-loader": "^7.0.1",
 		"sass-loader": "^10.1.1",
 		"style-loader": "^2.0.0"
 	}
