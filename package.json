@@ -17,7 +17,8 @@
 		"build": "npm run prebuild && rollup -c",
 		"full-build": "npm run do-prettier && npm run build && git add -A && git commit -m \"full-build\"",
 		"do-prettier": "prettier src --write",
-		"full-publish": "npm run full-build && npm run publish",
+		"do-publish": "npm publish",
+		"full-publish": "npm run full-build && npm run do-publish",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
