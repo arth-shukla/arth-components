@@ -39,10 +39,7 @@ function ColorSwitch({ currentColorIndex, colors, onClick = () => {}, size = 40,
 			}
 			{...rest}
 		>
-			<div
-				aria-hidden={true}
-				className={`ai-color-targ ai-color-targ-${_selectNum}`}
-			></div>
+			<div aria-hidden={true} className={`ai-color-targ ai-color-targ-${_selectNum}`}></div>
 		</button>
 	)
 }

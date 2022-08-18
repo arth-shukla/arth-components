@@ -13,12 +13,7 @@ export default {
 	argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof ColorSwitch>
 
-const Template: ComponentStory<typeof ColorSwitch> = (colors, ...args) => (
-	<ColorSwitch
-		colors={['blue', 'red']}
-		{...args}
-	/>
-)
+const Template: ComponentStory<typeof ColorSwitch> = (colors, ...args) => <ColorSwitch colors={['blue', 'red']} {...args} />
 
 export const Button = Template.bind({})
 
