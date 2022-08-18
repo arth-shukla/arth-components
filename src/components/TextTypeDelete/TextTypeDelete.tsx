@@ -32,6 +32,7 @@ function TextTypeDelete({
 	fontSize = '20px',
 	cursorHeight = '22px',
 	cursorWidth = '2px',
+	fontFamily = "'Courier New', Courier, monospace",
 	style,
 	...rest
 }: TextTypeDeleteProps) {
@@ -43,9 +44,6 @@ function TextTypeDelete({
 		setTimeout(() => {
 			let temp: number[] = tc[0] == typeText.length ? [0, -1] : tc
 			let deleting: boolean = temp[1] == typeText[temp[0]].length - 1
-
-			console.log(text, tc, nextTimeout)
-			// console.log(deleting, text.length)
 
 			if (deleting) {
 				if (!loop && tc[0] == typeText.length - 1) return
@@ -77,6 +75,7 @@ function TextTypeDelete({
 					'--ai-text-type-delete-cursor-height': cursorHeight,
 					'--ai-text-type-delete-cursor-width': cursorWidth,
 					'--ai-text-type-delete-font-size': fontSize,
+					'--ai-text-type-delete-font-family': fontFamily,
 					...style,
 				} as React.CSSProperties
 			}

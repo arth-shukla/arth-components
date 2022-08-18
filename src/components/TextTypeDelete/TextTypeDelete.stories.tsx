@@ -17,6 +17,7 @@ var constArgs = {
 	typeText: ['a developer.', 'a student.', ' Arth.'],
 	constText: "Hi! I'm ",
 	style: { marginTop: '1em' },
+	fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
 }
 
 const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => (
