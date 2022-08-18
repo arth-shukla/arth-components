@@ -13,9 +13,27 @@ export default {
 	argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof TextTypeDelete>
 
-const Template: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} />
+var constArgs = {
+	typeText: ['a developer.', 'a student.', ' Arth.'],
+	constText: "Hi! I'm ",
+	style: { marginTop: '1em' },
+}
 
-export const Button = Template.bind({})
+const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} />
+
+export const Testing = TestingTemplate.bind({})
+
+const NoLoopTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} loop={false} />
+
+export const NoLoop = NoLoopTemplate.bind({})
+
+const LoopTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} loop={true} />
+
+export const Loop = LoopTemplate.bind({})
+
+const ColorfulTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} constTextColor='black' typeTextColor='purple' loop={true} />
+
+export const Colorful = ColorfulTemplate.bind({})
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 // Button.play = async ({ canvasElement }) => {
