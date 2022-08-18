@@ -19,19 +19,44 @@ var constArgs = {
 	style: { marginTop: '1em' },
 }
 
-const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} />
+const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => (
+	<TextTypeDelete
+		{...args}
+		{...constArgs}
+	/>
+)
 
 export const Testing = TestingTemplate.bind({})
 
-const NoLoopTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} loop={false} />
+const NoLoopTemplate: ComponentStory<typeof TextTypeDelete> = args => (
+	<TextTypeDelete
+		{...args}
+		{...constArgs}
+		loop={false}
+	/>
+)
 
 export const NoLoop = NoLoopTemplate.bind({})
 
-const LoopTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} loop={true} />
+const LoopTemplate: ComponentStory<typeof TextTypeDelete> = args => (
+	<TextTypeDelete
+		{...args}
+		{...constArgs}
+		loop={true}
+	/>
+)
 
 export const Loop = LoopTemplate.bind({})
 
-const ColorfulTemplate: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} {...constArgs} constTextColor='black' typeTextColor='purple' loop={true} />
+const ColorfulTemplate: ComponentStory<typeof TextTypeDelete> = args => (
+	<TextTypeDelete
+		{...args}
+		{...constArgs}
+		constTextColor='black'
+		typeTextColor='purple'
+		loop={true}
+	/>
+)
 
 export const Colorful = ColorfulTemplate.bind({})
 

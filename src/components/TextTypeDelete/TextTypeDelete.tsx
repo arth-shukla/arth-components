@@ -85,11 +85,17 @@ function TextTypeDelete({
 			}
 			{...rest}
 		>
-			<div id='ai-text-type-delete-text' aria-hidden={true}>
+			<div
+				id='ai-text-type-delete-text'
+				aria-hidden={true}
+			>
 				<span style={{ color: constTextColor }}>{constText}</span>
 				<span style={{ color: typeTextColor }}>{text}</span>
 			</div>
-			<div id='ai-text-type-delete-cursor' aria-hidden={true}></div>
+			<div
+				id='ai-text-type-delete-cursor'
+				aria-hidden={true}
+			></div>
 		</div>
 	)
 }
