@@ -1,24 +1,19 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 // import { within, userEvent } from '@storybook/testing-library'
-import ColorSwitch from './ColorSwitch'
+import TextTypeDelete from './TextTypeDelete'
 
 export default {
-	title: 'ColorSwitch',
-	component: ColorSwitch,
+	title: 'TextTypeDelete',
+	component: TextTypeDelete,
 	parameters: {
 		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
 		layout: 'fullscreen',
 	},
 	argTypes: { onClick: { action: 'clicked' } },
-} as ComponentMeta<typeof ColorSwitch>
+} as ComponentMeta<typeof TextTypeDelete>
 
-const Template: ComponentStory<typeof ColorSwitch> = (colors, ...args) => (
-	<ColorSwitch
-		colors={['blue', 'red']}
-		{...args}
-	/>
-)
+const Template: ComponentStory<typeof TextTypeDelete> = args => <TextTypeDelete {...args} />
 
 export const Button = Template.bind({})
 
