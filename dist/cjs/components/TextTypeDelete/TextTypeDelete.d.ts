@@ -15,5 +15,5 @@ interface TextTypeDeleteProps {
     cursorWidth?: string;
     [x: string]: any;
 }
-declare function TextTypeDelete({ typeText, loop, blinkGap, constText, constTextColor, typeTextColor, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, style, ...rest }: TextTypeDeleteProps): JSX.Element;
+declare function TextTypeDelete({ typeText, loop, blinkGap, constText, constTextColor, typeTextColor, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, fontFamily, style, ...rest }: TextTypeDeleteProps): JSX.Element;
 export default TextTypeDelete;
