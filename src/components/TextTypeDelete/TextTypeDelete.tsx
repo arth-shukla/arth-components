@@ -15,6 +15,7 @@ interface TextTypeDeleteProps {
 	fontSize?: string
 	cursorHeight?: string
 	cursorWidth?: string
+	style?: {}
 	[x: string]: any
 }
 
@@ -33,7 +34,7 @@ function TextTypeDelete({
 	cursorHeight = '22px',
 	cursorWidth = '2px',
 	fontFamily = "'Courier New', Courier, monospace",
-	style,
+	style = {},
 	...rest
 }: TextTypeDeleteProps) {
 	const [text, setText] = useState<string>('')
