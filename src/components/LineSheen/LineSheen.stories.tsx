@@ -16,7 +16,9 @@ export default {
 const TestingTemplate: ComponentStory<typeof LineSheen> = args => (
 	<div>
 		<div>Some Text</div>
-		<LineSheen {...args} />
+		<div style={{ width: '500px', margin: 'auto' }}>
+			<LineSheen {...args} />
+		</div>
 	</div>
 )
 

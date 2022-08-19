@@ -13,7 +13,7 @@ interface LineSheenProps {
 function LineSheen({ lineHeight = '2px', sheenHeight = '4px', color = 'black', animDuration = '1s', style = {}, ...rest }: LineSheenProps) {
 	return (
 		<div
-			id='ai-line-sheen-line'
+			id='ai-line-sheen-container'
 			style={
 				{
 					'--ai-line-sheen-line-height': lineHeight,
@@ -24,7 +24,14 @@ function LineSheen({ lineHeight = '2px', sheenHeight = '4px', color = 'black', a
 				} as React.CSSProperties
 			}
 			{...rest}
-		></div>
+			aria-hidden={true}
+			tabIndex={-1}
+		>
+			<div
+				id='ai-line-sheen-line'
+				{...rest}
+			></div>
+		</div>
 	)
 }
 
