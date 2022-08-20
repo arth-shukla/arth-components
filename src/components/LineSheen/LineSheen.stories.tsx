@@ -2,6 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 // import { within, userEvent } from '@storybook/testing-library'
 import LineSheen from './LineSheen'
+import ColorSwitch from '../ColorSwitch'
 
 export default {
 	title: 'LineSheen',
@@ -13,14 +14,26 @@ export default {
 	argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof LineSheen>
 
-const TestingTemplate: ComponentStory<typeof LineSheen> = args => (
-	<div>
-		<div>Some Text</div>
-		<div style={{ width: '500px', margin: 'auto' }}>
-			<LineSheen {...args} />
+const TestingTemplate: ComponentStory<typeof LineSheen> = args => {
+	const [i, setI] = React.useState(0)
+	const colors = ['blue', 'red', 'black']
+	const sheenColors = ['purple', 'orange', 'grey']
+
+	return (
+		<div>
+			<ColorSwitch
+				colors={colors}
+				currentColorIndex={i}
+				onClick={() => setI((i + 1) % colors.length)}
+			/>
+			<LineSheen
+				{...args}
+				lineColor={colors[i]}
+				sheenColor={sheenColors[i]}
+			/>
 		</div>
-	</div>
-)
+	)
+}
 
 export const Testing = TestingTemplate.bind({})
 
