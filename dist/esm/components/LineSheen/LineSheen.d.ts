@@ -1,11 +1,14 @@
 import './LineSheen.scss';
 interface LineSheenProps {
+    lineWidth?: string;
     lineHeight?: string;
-    sheenHeight?: string;
-    color?: string;
-    animDuration?: string;
+    lineColor?: string;
+    sheenColor?: string;
+    animDuration?: number;
+    onClick?: () => void;
+    className?: string;
     style?: {};
     [x: string]: any;
 }
-declare function LineSheen({ lineHeight, sheenHeight, color, animDuration, style, ...rest }: LineSheenProps): JSX.Element;
+declare function LineSheen({ lineWidth, lineHeight, lineColor, animDuration, sheenColor, className, style, ...rest }: LineSheenProps): JSX.Element;
 export default LineSheen;
