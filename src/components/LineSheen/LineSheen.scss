@@ -1,64 +1,7 @@
-// #ai-line-sheen-container {
-// 	display: table;
-// 	width: 100%;
-// 	height: 100%;
-// 	position: relative;
-// 	overflow: hidden;
-// 	padding: var(--ai-line-sheen-line-height) 0;
-
-// 	#ai-line-sheen-lines {
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 		right: 0;
-// 		height: 90vw;
-// 		margin: auto;
-// 		width: 100%;
-
-// 		#ai-line-sheen-line {
-// 			position: absolute;
-// 			height: var(--ai-line-sheen-line-height);
-// 			width: 100%;
-// 			background: var(--ai-line-sheen-color);
-// 			overflow: hidden;
-
-// 			&::after {
-// 				content: '';
-// 				display: block;
-// 				position: absolute;
-// 				margin-top: calc((var(--ai-line-sheen-sheen-height) - var(--ai-line-sheen-line-height)) * -0.5);
-// 				width: 10%;
-// 				right: 100%;
-// 				height: var(--ai-line-sheen-sheen-height);
-// 				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, var(--ai-line-sheen-color) 75%, var(--ai-line-sheen-color) 100%);
-// 				animation: drop var(--ai-line-sheen-tr-sec) 0s;
-// 				animation-fill-mode: forwards;
-// 				animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-// 			}
-// 		}
-// 	}
-// }
-
-// @keyframes drop {
-// 	0% {
-// 		width: 10%;
-// 		right: 100%;
-// 	}
-// 	30% {
-// 		width: 100%;
-// 	}
-// 	60% {
-// 		right: -10%;
-// 	}
-// 	100% {
-// 		width: 10%;
-// 		right: -10%;
-// 	}
-// }
 #ai-line-sheen-container {
 	margin: auto;
 	margin-top: 50px;
-	height: 100px;
+	height: var(--ai-line-sheen-line-height);
 	width: var(--ai-line-sheen-line-width);
 	position: relative;
 	overflow: hidden;
@@ -73,7 +16,7 @@
 			position: absolute;
 			height: var(--ai-line-sheen-line-height);
 			width: 100%;
-			top: 10px;
+			top: 0;
 			left: 0;
 			background: var(--ai-line-sheen-line-color);
 			overflow-x: hidden;
