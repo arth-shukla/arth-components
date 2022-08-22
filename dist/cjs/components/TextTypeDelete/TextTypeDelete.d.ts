@@ -3,11 +3,10 @@ interface TextTypeDeleteProps {
     typeText: string[];
     loop?: boolean;
     blinkGap?: string;
+    textAlign?: string;
     constText?: any;
     constTextColor?: string;
-    constTextAlign?: 'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start';
     typeTextColor?: string;
-    typeTextAlign?: 'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start';
     cursorColor?: string;
     pauseMSec?: number;
     typeMSec?: number;
@@ -20,5 +19,5 @@ interface TextTypeDeleteProps {
     style?: {};
     [x: string]: any;
 }
-declare function TextTypeDelete({ typeText, loop, blinkGap, constText, constTextColor, constTextAlign, typeTextColor, typeTextAlign, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, fontFamily, constTextStyles, typeTextStyles, style, ...rest }: TextTypeDeleteProps): JSX.Element;
+declare function TextTypeDelete({ typeText, loop, textAlign, blinkGap, constText, constTextColor, typeTextColor, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, fontFamily, constTextStyles, typeTextStyles, style, ...rest }: TextTypeDeleteProps): JSX.Element;
 export default TextTypeDelete;
