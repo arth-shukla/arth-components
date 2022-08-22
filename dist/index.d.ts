@@ -37,6 +37,8 @@ declare function LineSheen({ lineWidth, lineHeight, lineColor, animDuration, she
 
 interface TextTypeDeleteProps {
     typeText: string[];
+    play?: boolean;
+    onComplete?: () => void;
     loop?: boolean;
     blinkGap?: string;
     textAlign?: string;
@@ -55,6 +57,6 @@ interface TextTypeDeleteProps {
     style?: {};
     [x: string]: any;
 }
-declare function TextTypeDelete({ typeText, loop, textAlign, blinkGap, constText, constTextColor, typeTextColor, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, fontFamily, constTextStyles, typeTextStyles, style, ...rest }: TextTypeDeleteProps): JSX.Element;
+declare function TextTypeDelete({ typeText, play, onComplete, loop, textAlign, blinkGap, constText, constTextColor, typeTextColor, cursorColor, pauseMSec, typeMSec, deleteMSec, fontSize, cursorHeight, cursorWidth, fontFamily, constTextStyles, typeTextStyles, style, ...rest }: TextTypeDeleteProps): JSX.Element;
 
 export { ColorSwitch, DarkModeSwitch, LineSheen, TextTypeDelete };
