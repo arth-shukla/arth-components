@@ -25,14 +25,14 @@
 		width: var(--ai-text-type-delete-cursor-width);
 		height: var(--ai-text-type-delete-cursor-height);
 		background-color: var(--ai-text-type-delete-cursor-color);
-		// @include animate(cursor-blink, var(--ai-text-type-delete-cursor-blink), step-end, infinite) {
-		// 	from,
-		// 	to {
-		// 		background-color: transparent;
-		// 	}
-		// 	50% {
-		// 		background-color: var(--ai-text-type-delete-cursor-color);
-		// 	}
-		// }
+		@include animate(cursor-blink, var(--ai-text-type-delete-cursor-blink), step-end, infinite) {
+			from,
+			to {
+				background-color: transparent;
+			}
+			50% {
+				background-color: var(--ai-text-type-delete-cursor-color);
+			}
+		}
 	}
 }
