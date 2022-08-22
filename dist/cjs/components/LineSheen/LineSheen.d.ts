@@ -5,7 +5,6 @@ interface LineSheenProps {
     lineColor?: string;
     sheenColor?: string;
     animDuration?: number;
-    onClick?: () => void;
     className?: string;
     style?: {};
     [x: string]: any;
