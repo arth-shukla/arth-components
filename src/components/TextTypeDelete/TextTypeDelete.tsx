@@ -51,6 +51,34 @@ function TextTypeDelete({
 	const [tc, setTc] = useState<number[]>([0, -1])
 	const [nextTimeout, setNextTimeout] = useState<number>(pauseMSec)
 
+	const getTextContent: (arg: any) => string = (elem: any) => {
+		if (!elem) {
+			return ''
+		}
+		if (typeof elem === 'string') {
+			return elem
+		} else if (elem instanceof Array) {
+			let retVal = ''
+
+			elem.forEach(v => {
+				if (typeof v === 'string') retVal += v
+				else retVal += ' ' + getTextContent(v)
+			})
+			return retVal
+		}
+		const children = elem.props?.children
+		if (children instanceof Array) {
+			return children.map(child => getTextContent(child)).join(' ')
+		}
+		return getTextContent(children)
+	}
+
+	const replaceAllDoubleSpaces: (arg: string) => string = (str: string) => {
+		while (str.includes('  ')) str = str.replace('  ', ' ')
+
+		return str
+	}
+
 	useEffect(() => {
 		if (play) {
 			setTimeout(() => {
@@ -84,6 +112,7 @@ function TextTypeDelete({
 
 	return (
 		<div
+			tabIndex={0}
 			id='ai-text-type-delete-container'
 			style={
 				{
@@ -98,7 +127,8 @@ function TextTypeDelete({
 				} as React.CSSProperties
 			}
 			aria-label={
-				`An animation with constant text "${constText}" and dynamic text which changes from "${typeText.join('" to "')}".` + (loop ? ' It continually loops through the dynamic text.' : '')
+				`An animation with constant text "${replaceAllDoubleSpaces(getTextContent(constText))}" and dynamic text which changes from "${typeText.join('" to "')}".` +
+				(loop ? ' It continually loops through the dynamic text.' : '')
 			}
 			{...rest}
 		>
