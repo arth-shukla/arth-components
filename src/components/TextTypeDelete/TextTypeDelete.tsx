@@ -142,11 +142,14 @@ function TextTypeDelete({
 				aria-hidden={true}
 			>
 				<span style={{ color: constTextColor, ...constTextStyles }}>{constText}</span>
-				<span style={{ color: typeTextColor, ...typeTextStyles }}>{text}</span>
-				<div
-					id='ai-text-type-delete-cursor'
-					aria-hidden={true}
-				></div>
+				<span style={{ color: typeTextColor, ...typeTextStyles }}>{text.slice(0, -1)}</span>
+				<span style={{ whiteSpace: 'nowrap' }}>
+					<span style={{ color: typeTextColor, ...typeTextStyles }}>{text.slice(-1)}</span>
+					<div
+						id='ai-text-type-delete-cursor'
+						aria-hidden={true}
+					></div>
+				</span>
 			</div>
 		</div>
 	)
