@@ -14,8 +14,14 @@ export default {
 } as ComponentMeta<typeof TextTypeDelete>
 
 var constArgs = {
-	typeText: ['a developer.', 'a student.', ' Arth.'],
-	constText: "Hi! I'm ",
+	typeText: ['a developer.', 'a student.', 'Arth.'],
+	constText: (
+		<>
+			Hi!
+			<br />
+			I'm&nbsp;
+		</>
+	),
 	style: { marginTop: '1em' },
 	fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
 }
