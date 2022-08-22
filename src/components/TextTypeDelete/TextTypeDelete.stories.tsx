@@ -37,9 +37,7 @@ const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => {
 				play={play}
 				{...args}
 				{...constArgs}
-				onComplete={() => {
-					setPlay(false)
-				}}
+				onComplete={() => {}}
 				loop={true}
 			/>
 		</>

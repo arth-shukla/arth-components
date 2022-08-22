@@ -50,6 +50,7 @@ function TextTypeDelete({
 	const [text, setText] = useState<string>('')
 	const [tc, setTc] = useState<number[]>([0, -1])
 	const [nextTimeout, setNextTimeout] = useState<number>(pauseMSec)
+	const [lastTimeoutID, setLastTimeoutID] = useState<NodeJS.Timeout>()
 
 	const getTextContent: (arg: any) => string = (elem: any) => {
 		if (!elem) {
@@ -81,32 +82,36 @@ function TextTypeDelete({
 
 	useEffect(() => {
 		if (play) {
-			setTimeout(() => {
-				let temp: number[] = tc[0] == typeText.length ? [0, -1] : tc
-				let deleting: boolean = temp[1] == typeText[temp[0]].length - 1
+			setLastTimeoutID(
+				setTimeout(() => {
+					let temp: number[] = tc[0] == typeText.length ? [0, -1] : tc
+					let deleting: boolean = temp[1] == typeText[temp[0]].length - 1
 
-				if (deleting) {
-					if (!loop && tc[0] == typeText.length - 1) {
-						onComplete()
-						return
-					}
+					if (deleting) {
+						if (!loop && tc[0] == typeText.length - 1) {
+							onComplete()
+							return
+						}
 
-					if (text.length == 1) {
-						if (tc[0] == typeText.length - 1) onComplete()
-						temp = [temp[0] + 1, -1]
-						setNextTimeout(pauseMSec)
+						if (text.length == 1) {
+							if (tc[0] == typeText.length - 1) onComplete()
+							temp = [temp[0] + 1, -1]
+							setNextTimeout(pauseMSec)
+						} else {
+							setNextTimeout(deleteMSec)
+						}
+						setText(text.slice(0, -1))
 					} else {
-						setNextTimeout(deleteMSec)
+						temp = [temp[0], temp[1] + 1]
+						setText(text + typeText[temp[0]][temp[1]])
+						setNextTimeout(temp[1] == typeText[temp[0]].length - 1 ? pauseMSec : typeMSec)
 					}
-					setText(text.slice(0, -1))
-				} else {
-					temp = [temp[0], temp[1] + 1]
-					setText(text + typeText[temp[0]][temp[1]])
-					setNextTimeout(temp[1] == typeText[temp[0]].length - 1 ? pauseMSec : typeMSec)
-				}
 
-				setTc(temp)
-			}, nextTimeout)
+					setTc(temp)
+				}, nextTimeout),
+			)
+		} else if (lastTimeoutID) {
+			clearTimeout(lastTimeoutID)
 		}
 	}, [text, play])
 
