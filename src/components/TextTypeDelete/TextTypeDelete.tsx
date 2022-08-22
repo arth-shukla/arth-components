@@ -5,11 +5,10 @@ interface TextTypeDeleteProps {
 	typeText: string[]
 	loop?: boolean
 	blinkGap?: string
+	textAlign?: string
 	constText?: any
 	constTextColor?: string
-	constTextAlign?: 'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'
 	typeTextColor?: string
-	typeTextAlign?: 'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'
 	cursorColor?: string
 	pauseMSec?: number
 	typeMSec?: number
@@ -26,12 +25,11 @@ interface TextTypeDeleteProps {
 function TextTypeDelete({
 	typeText,
 	loop = false,
+	textAlign = 'center',
 	blinkGap = '1s',
 	constText = '',
 	constTextColor = 'black',
-	constTextAlign = 'center',
 	typeTextColor = 'black',
-	typeTextAlign = 'center',
 	cursorColor = 'black',
 	pauseMSec = 1000,
 	typeMSec = 100,
@@ -85,6 +83,7 @@ function TextTypeDelete({
 					'--ai-text-type-delete-cursor-width': cursorWidth,
 					'--ai-text-type-delete-font-size': fontSize,
 					'--ai-text-type-delete-font-family': fontFamily,
+					'--ai-text-type-delete-text-align': textAlign,
 					...style,
 				} as React.CSSProperties
 			}
@@ -97,8 +96,8 @@ function TextTypeDelete({
 				id='ai-text-type-delete-text'
 				aria-hidden={true}
 			>
-				<span style={{ color: constTextColor, textAlign: constTextAlign, ...constTextStyles }}>{constText}</span>
-				<span style={{ color: typeTextColor, textAlign: typeTextAlign, ...typeTextStyles }}>{text}</span>
+				<span style={{ color: constTextColor, ...constTextStyles }}>{constText}</span>
+				<span style={{ color: typeTextColor, ...typeTextStyles }}>{text}</span>
 				<div
 					id='ai-text-type-delete-cursor'
 					aria-hidden={true}

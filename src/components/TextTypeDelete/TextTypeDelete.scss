@@ -10,6 +10,8 @@
 }
 
 #ai-text-type-delete-container {
+	text-align: var(--ai-text-type-delete-text-align);
+
 	#ai-text-type-delete-text {
 		font-family: var(--ai-text-type-delete-font-family);
 		font-size: var(--ai-text-type-delete-font-size);
