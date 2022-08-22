@@ -26,12 +26,25 @@ var constArgs = {
 	fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
 }
 
-const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => (
-	<TextTypeDelete
-		{...args}
-		{...constArgs}
-	/>
-)
+const TestingTemplate: ComponentStory<typeof TextTypeDelete> = args => {
+	const [play, setPlay] = React.useState<boolean>(false)
+
+	return (
+		<>
+			<button onClick={() => setPlay(!play)}>Click Me!</button>
+
+			<TextTypeDelete
+				play={play}
+				{...args}
+				{...constArgs}
+				onComplete={() => {
+					setPlay(false)
+				}}
+				loop={true}
+			/>
+		</>
+	)
+}
 
 export const Testing = TestingTemplate.bind({})
 

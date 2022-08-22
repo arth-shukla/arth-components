@@ -3,6 +3,8 @@ import './TextTypeDelete.scss'
 
 interface TextTypeDeleteProps {
 	typeText: string[]
+	play?: boolean
+	onComplete?: () => void
 	loop?: boolean
 	blinkGap?: string
 	textAlign?: string
@@ -24,6 +26,8 @@ interface TextTypeDeleteProps {
 
 function TextTypeDelete({
 	typeText,
+	play = true,
+	onComplete = () => {},
 	loop = false,
 	textAlign = 'center',
 	blinkGap = '1s',
@@ -48,29 +52,35 @@ function TextTypeDelete({
 	const [nextTimeout, setNextTimeout] = useState<number>(pauseMSec)
 
 	useEffect(() => {
-		setTimeout(() => {
-			let temp: number[] = tc[0] == typeText.length ? [0, -1] : tc
-			let deleting: boolean = temp[1] == typeText[temp[0]].length - 1
+		if (play) {
+			setTimeout(() => {
+				let temp: number[] = tc[0] == typeText.length ? [0, -1] : tc
+				let deleting: boolean = temp[1] == typeText[temp[0]].length - 1
 
-			if (deleting) {
-				if (!loop && tc[0] == typeText.length - 1) return
+				if (deleting) {
+					if (!loop && tc[0] == typeText.length - 1) {
+						onComplete()
+						return
+					}
 
-				if (text.length == 1) {
-					temp = [temp[0] + 1, -1]
-					setNextTimeout(pauseMSec)
+					if (text.length == 1) {
+						if (tc[0] == typeText.length - 1) onComplete()
+						temp = [temp[0] + 1, -1]
+						setNextTimeout(pauseMSec)
+					} else {
+						setNextTimeout(deleteMSec)
+					}
+					setText(text.slice(0, -1))
 				} else {
-					setNextTimeout(deleteMSec)
+					temp = [temp[0], temp[1] + 1]
+					setText(text + typeText[temp[0]][temp[1]])
+					setNextTimeout(temp[1] == typeText[temp[0]].length - 1 ? pauseMSec : typeMSec)
 				}
-				setText(text.slice(0, -1))
-			} else {
-				temp = [temp[0], temp[1] + 1]
-				setText(text + typeText[temp[0]][temp[1]])
-				setNextTimeout(temp[1] == typeText[temp[0]].length - 1 ? pauseMSec : typeMSec)
-			}
 
-			setTc(temp)
-		}, nextTimeout)
-	}, [text])
+				setTc(temp)
+			}, nextTimeout)
+		}
+	}, [text, play])
 
 	return (
 		<div
