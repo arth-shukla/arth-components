@@ -117,7 +117,6 @@ function TextTypeDelete({
 
 	return (
 		<div
-			tabIndex={0}
 			id='ai-text-type-delete-container'
 			style={
 				{
