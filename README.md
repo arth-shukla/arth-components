@@ -32,7 +32,7 @@ Since I will likely use these components across multiple projects, I made a libr
 
 Demos and documentation for the above library are available here: https://arth-shukla.github.io/my-icons-documentation/.
 
-A real project where I've used these components is this DnD Dice Roller: https://arth-shukla.github.io/dice-roller/.
+A real project where I've used some of these components is this DnD Dice Roller: https://arth-shukla.github.io/dice-roller/.
 
 # About Me
 
