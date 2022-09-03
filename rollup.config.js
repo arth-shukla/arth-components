@@ -15,12 +15,12 @@ export default [
 			{
 				file: packageJson.main,
 				format: 'cjs',
-				sourcemap: true,
+				sourcemap: false,
 			},
 			{
 				file: packageJson.module,
 				format: 'esm',
-				sourcemap: true,
+				sourcemap: false,
 			},
 		],
 		plugins: [external(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), postcss(), terser()],
