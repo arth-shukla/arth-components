@@ -12,7 +12,7 @@ Development Standards: Web Content Accessibility Guidelines (WCAG) 2.1, Aria Aut
 
 # Description and Motivation
 
-This is a component library for my simple icon animations. It is published through GitHub Packages https://github.com/arth-shukla/my-icons/packages/1583093.
+This is a component library for my simple icon animations. I recently migrated the component library to the npm registry: https://www.npmjs.com/package/@arth-shukla/arth-components. The older version is still maintained on GitHub Packages here: https://github.com/arth-shukla/my-icons/pkgs/npm/my-icons.
 
 Since I will likely use these components across multiple projects, I made a library so I don't have to port the same components to each new project.
 
